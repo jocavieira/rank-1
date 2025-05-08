@@ -6,7 +6,7 @@
 /*   By: jocarlo2 <jocarlo2@sudent.42porto.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 16:35:08 by jocarlo2          #+#    #+#             */
-/*   Updated: 2025/05/08 17:28:20 by jocarlo2         ###   ########.fr       */
+/*   Updated: 2025/05/08 18:53:37 by jocarlo2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int ft_putstr(char *str)
 	return (i);	
 }
 
-int	ft_format(va_list *ap, const char fmt)
+static int	ft_format(va_list *ap, const char fmt)
 {
 	int count;
 
