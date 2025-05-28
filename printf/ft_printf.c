@@ -6,18 +6,18 @@
 /*   By: jocarlo2 <jocarlo2@sudent.42porto.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 16:35:08 by jocarlo2          #+#    #+#             */
-/*   Updated: 2025/05/08 18:53:37 by jocarlo2         ###   ########.fr       */
+/*   Updated: 2025/05/16 17:25:56 by jocarlo2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_putchar(int c)
+int	ft_putchar(int c)
 {
 	return (write (1, &c, 1));
 }
 
-static int ft_putstr(char *str)
+int ft_putstr(char *str)
 {
 	int	i;
 	
@@ -29,7 +29,7 @@ static int ft_putstr(char *str)
 	return (i);	
 }
 
-static int	ft_format(va_list *ap, const char fmt)
+int	ft_format(va_list *ap, const char fmt)
 {
 	int count;
 
@@ -78,7 +78,7 @@ int	ft_printf(const char *format, ...)
 	va_end(ptr);
 	return (size);
 }
-/*
+
 int main(void)
 {
 	char *str = "hello";
@@ -90,10 +90,10 @@ int main(void)
 	int count1 = ft_printf("int %d, string %s hex: %x, hexU: %X, pointer: %p\n", 42, str, 42, 42, str);
 	printf("count std: %d\n", count);
 	ft_printf("my count: %d\n", count1);
-	printf("iteste com %% no final %");
+	printf(" standard iteste com %% no final %");
 	puts("");
-	ft_printf("iteste com %% no final %");
+	ft_printf("meu teste com %% no final %");
 
 	printf("\n=== ft_printf com NULL ===\n");
 	ft_printf("string NULL: %s\n", (char *)NULL);
-}*/
+}

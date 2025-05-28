@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jocarlo2 <jocarlo2@sudent.42porto.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/07 16:43:16 by jocarlo2          #+#    #+#             */
-/*   Updated: 2025/05/16 17:25:22 by jocarlo2         ###   ########.fr       */
+/*   Created: 2025/05/21 14:32:54 by jocarlo2          #+#    #+#             */
+/*   Updated: 2025/05/21 14:33:23 by jocarlo2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FTPRINTF_H
-#define FTPRINTF_H
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdarg.h>
-#include <stdint.h>
-#include <stdio.h>
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
-int	ft_printf(const char *format, ...);
-int	ft_format(va_list *ap, const char fmt);
-int	ft_putchar(int c);
-int ft_putstr(char *str);
-int ft_putnbr(int n);
-int	ft_putnbr_u(unsigned int nb);
-int ft_putnbr_hex(uintptr_t n, int upper);
-int ft_putptr(void *ptr);
+# include <stdlib.h>
+# include <unistd.h>
+
+char	*get_next_line(int fd);
+char	*ft_strjoin_gnl(char *s1, char *s2);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strdup(const char *s);
+char	*ft_substr(const char *s, unsigned int start, size_t len);
+size_t	ft_strlen(const char *s);
 
 #endif
